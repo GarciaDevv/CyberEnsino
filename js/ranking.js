@@ -13,6 +13,8 @@ function renderizarRanking() {
   if (ranking.length === 0) {
     const demo = [
       { usuario: 'DracuZed', pontos: 7850, nivel: 10 },
+      { usuario: 'DracuZed', pontos: 12850, nivel: 90 },
+
       { usuario: 'CyberNinja',  pontos: 3200, nivel: 7  },
       { usuario: 'NetDefender', pontos: 2750, nivel: 6  },
       { usuario: 'CodeBreaker', pontos: 1900, nivel: 4  },
