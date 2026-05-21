@@ -12,7 +12,7 @@ function renderizarRanking() {
   // Se não há dados, cria dados de demonstração
   if (ranking.length === 0) {
     const demo = [
-      { usuario: 'HackerElite', pontos: 4850, nivel: 10 },
+      { usuario: 'DracuZed', pontos: 7850, nivel: 10 },
       { usuario: 'CyberNinja',  pontos: 3200, nivel: 7  },
       { usuario: 'NetDefender', pontos: 2750, nivel: 6  },
       { usuario: 'CodeBreaker', pontos: 1900, nivel: 4  },

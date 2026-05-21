@@ -7,6 +7,8 @@ let tempoPorPergunta = 30
 let quizAtivo        = false
 let timerInstancia   = null  // era "timerInstacia" (faltava o 'n')
 let tempoResposta    = 0
+const somAcerto = new Audio('assets/sounds/acerto.mp3')
+const somErro = new Audio('assets/sounds/erro.mp3')
 
 function embaralhar(arr) {
   const copia = [...arr]
@@ -100,6 +102,7 @@ function responder(indiceSelecionado) {
 
   if (indiceSelecionado === pergunta.respostaCorreta) {
     botoes[indiceSelecionado].classList.add('correta')
+    somAcerto.play()
 
     const bonus = Math.floor((tempoResposta / tempoPorPergunta) * 50)
     const pts   = 100 + bonus
@@ -116,7 +119,7 @@ function responder(indiceSelecionado) {
   } else {
     botoes[indiceSelecionado].classList.add('errada')
     botoes[pergunta.respostaCorreta].classList.add('correta')
-
+    somErro.play()
     feedback.className = 'feedback-box show erro'
     feedback.innerHTML = `✗ Incorreto &nbsp;|&nbsp; ${pergunta.explicacao}`
   }
