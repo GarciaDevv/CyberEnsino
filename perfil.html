@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CyberAcademy — Perfil</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <nav>
+    <a href="index.html" class="nav-logo">CYBER<span>ACADEMY</span></a>
+    <div class="nav-links">
+      <a href="index.html">Quiz</a>
+      <a href="ranking.html">Ranking</a>
+      <a href="perfil.html" class="active">Perfil</a>
+    </div>
+    <div class="nav-user">
+      <span class="username" id="nav-usuario"></span>
+      <button class="btn-logout" onclick="sair()">Sair</button>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="page-title">Perfil do Agente</div>
+    <div class="page-subtitle">// FICHA DE IDENTIFICAÇÃO</div>
+
+    <div style="display:flex; gap:1.5rem; align-items:flex-start; flex-wrap:wrap;">
+
+      <!-- Coluna principal -->
+      <div style="flex:2; min-width:280px;">
+        <div class="panel" style="margin-bottom:1.5rem;">
+          <div class="perfil-header">
+            <div class="avatar">
+              <span id="avatar-inicial">?</span>
+            </div>
+            <div class="perfil-info">
+              <h2 id="nome-usuario">—</h2>
+              <div class="perfil-nivel">NÍVEL <span id="nivel-num">1</span> &nbsp;|&nbsp; AGENTE</div>
+            </div>
+          </div>
+
+          <div class="xp-bar-wrap">
+            <div class="xp-label">
+              <span>XP: <span id="xp-atual">0</span></span>
+              <span>Próximo nível: <span id="xp-prox">500</span></span>
+            </div>
+            <div class="xp-bar">
+              <div class="xp-fill" id="xp-fill" style="width:0%"></div>
+            </div>
+          </div>
+
+          <hr class="divider">
+
+          <div class="stats-grid">
+            <div class="stat-card">
+              <div class="stat-num" id="pontos-total">0</div>
+              <div class="stat-label">Pontos</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-num" id="partidas-total">0</div>
+              <div class="stat-label">Partidas</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-num" id="acertos-total">0</div>
+              <div class="stat-label">Acertos</div>
+            </div>
+          </div>
+
+          <div class="stats-grid" style="margin-top:1rem;">
+            <div class="stat-card">
+              <div class="stat-num" id="taxa-acerto">0%</div>
+              <div class="stat-label">Taxa de Acerto</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-num" id="badges-total">0</div>
+              <div class="stat-label">Badges</div>
+            </div>
+          </div>
+        </div>
+
+        <a href="index.html" class="btn btn-primary" style="display:block;text-align:center;">
+          &gt;_ Nova Partida
+        </a>
+      </div>
+
+      <!-- Badges -->
+      <div style="flex:1; min-width:240px;">
+        <div class="panel">
+          <div style="font-family:var(--mono);font-size:0.75rem;color:var(--text3);letter-spacing:2px;margin-bottom:0.5rem;">CONQUISTAS</div>
+          <div id="badges-container" class="badges-grid"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/auth.js"></script>
+  <script src="js/badges.js"></script>
+  <script src="js/perfil.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const u = localStorage.getItem('usuario')
+      if (u) document.getElementById('nav-usuario').textContent = u
+    })
+  </script>
+</body>
+</html>

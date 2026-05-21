@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CyberAcademy — Quiz</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <nav>
+    <a href="index.html" class="nav-logo">CYBER<span>ACADEMY</span></a>
+    <div class="nav-links">
+      <a href="index.html" class="active">Quiz</a>
+      <a href="ranking.html">Ranking</a>
+      <a href="perfil.html">Perfil</a>
+    </div>
+    <div class="nav-user">
+      <span class="username" id="nav-usuario"></span>
+      <button class="btn-logout" onclick="sair()">Sair</button>
+    </div>
+  </nav>
+
+  <div class="container">
+    <!-- ÁREA DO QUIZ -->
+    <div id="quiz-area">
+      <div style="display:flex; gap:1.5rem; align-items:flex-start; margin-bottom:1.5rem;">
+
+        <!-- Timer -->
+        <div class="panel" style="width:140px; flex-shrink:0; text-align:center; padding:1rem;">
+          <div style="font-family:var(--mono);font-size:0.65rem;color:var(--text3);letter-spacing:2px;margin-bottom:0.5rem;">TEMPO</div>
+          <div id="timer-display">30</div>
+        </div>
+
+        <!-- Pergunta -->
+        <div class="panel" style="flex:1;">
+          <div class="quiz-header">
+            <div class="quiz-progress">
+              PERGUNTA <span id="prog-atual">1</span>/<span id="prog-total">10</span>
+            </div>
+            <div style="display:flex;gap:0.5rem;align-items:center;">
+              <span class="badge badge-cat" id="badge-cat">Categoria</span>
+              <span class="badge" id="badge-dif">Fácil</span>
+            </div>
+            <div class="quiz-score-mini">⚡ <span id="score-mini">0</span> pts</div>
+          </div>
+
+          <div id="timer-bar">
+            <div id="timer-bar-fill" style="width:100%"></div>
+          </div>
+
+          <div id="pergunta-texto"></div>
+
+          <div class="opcoes-grid" id="opcoes"></div>
+
+          <div class="feedback-box" id="feedback"></div>
+
+          <div class="quiz-next">
+            <button class="btn btn-outline" id="btn-proximo" onclick="proximaPergunta()">
+              Próxima &rarr;
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RESULTADO -->
+    <div id="resultado">
+      <div class="panel">
+        <div class="page-title" style="text-align:center">MISSÃO CONCLUÍDA</div>
+        <div class="resultado-score" id="res-score-big">0</div>
+        <div class="resultado-msg" id="res-msg"></div>
+
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-num" id="res-acertos">0</div>
+            <div class="stat-label">Acertos</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num" id="res-pct">0%</div>
+            <div class="stat-label">Precisão</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num" id="res-pontos">0</div>
+            <div class="stat-label">Pontos Ganhos</div>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+          <button class="btn btn-primary" onclick="iniciarQuiz()">Jogar Novamente</button>
+          <a class="btn btn-outline" href="ranking.html">Ver Ranking</a>
+          <a class="btn btn-outline" href="perfil.html">Meu Perfil</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/perguntas.js"></script>
+  <script src="js/timer.js"></script>
+  <script src="js/badges.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/quiz.js"></script>
+  <script>
+    // Mostra nome do usuário na nav
+    document.addEventListener('DOMContentLoaded', () => {
+      const u = localStorage.getItem('usuario')
+      if (u) document.getElementById('nav-usuario').textContent = u
+    })
+  </script>
+</body>
+</html>

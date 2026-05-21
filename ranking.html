@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CyberAcademy — Ranking</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <nav>
+    <a href="index.html" class="nav-logo">CYBER<span>ACADEMY</span></a>
+    <div class="nav-links">
+      <a href="index.html">Quiz</a>
+      <a href="ranking.html" class="active">Ranking</a>
+      <a href="perfil.html">Perfil</a>
+    </div>
+    <div class="nav-user">
+      <span class="username" id="nav-usuario"></span>
+      <button class="btn-logout" onclick="sair()">Sair</button>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="page-title">Ranking Global</div>
+    <div class="page-subtitle">// TOP AGENTES DO SISTEMA</div>
+
+    <div style="display:flex; gap:1.5rem; align-items:flex-start;">
+      <div style="flex:1;">
+        <div class="panel">
+          <div id="ranking-lista">
+            <div style="font-family:var(--mono);color:var(--text3);text-align:center;padding:2rem;">
+              Carregando ranking...
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Painel lateral -->
+      <div style="width:200px; flex-shrink:0;">
+        <div class="panel" style="text-align:center;margin-bottom:1rem;">
+          <div style="font-family:var(--mono);font-size:0.7rem;color:var(--text3);letter-spacing:2px;margin-bottom:0.5rem;">SUA POSIÇÃO</div>
+          <div style="font-family:var(--mono);font-size:2.5rem;color:var(--accent);" id="minha-pos">—</div>
+        </div>
+
+        <div class="panel">
+          <div style="font-family:var(--mono);font-size:0.7rem;color:var(--text3);letter-spacing:2px;margin-bottom:0.75rem;">LEGENDA</div>
+          <div style="font-family:var(--mono);font-size:0.75rem;color:var(--text2);line-height:2;">
+            <div>🥇 1º lugar</div>
+            <div>🥈 2º lugar</div>
+            <div>🥉 3º lugar</div>
+            <div style="color:var(--accent);">◆ Você</div>
+          </div>
+        </div>
+
+        <a href="index.html" class="btn btn-primary" style="width:100%;text-align:center;margin-top:1rem;display:block;">
+          Jogar Agora
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/auth.js"></script>
+  <script src="js/ranking.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const u = localStorage.getItem('usuario')
+      if (u) document.getElementById('nav-usuario').textContent = u
+    })
+  </script>
+</body>
+</html>

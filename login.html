@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CyberAcademy — Login</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="login-wrapper">
+    <div class="panel login-box">
+      <div class="login-logo">CYBER<span>ACADEMY</span></div>
+      <div class="login-sub">// SISTEMA DE TREINAMENTO EM SEGURANÇA</div>
+
+      <div class="form-group">
+        <label for="username">Identificação do agente</label>
+        <input type="text" id="username" placeholder="Digite seu codinome..." maxlength="20" autocomplete="off">
+        <div class="error-msg" id="error-msg"></div>
+      </div>
+
+      <button class="btn btn-primary" style="width:100%" onclick="logar()">
+        &gt;_ INICIAR SESSÃO
+      </button>
+
+      <div style="margin-top: 1.5rem; font-family: var(--mono); font-size: 0.7rem; color: var(--text3); line-height: 1.6;">
+        <div>// Sem cadastro necessário</div>
+        <div>// Seu progresso fica salvo no navegador</div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/auth.js"></script>
+</body>
+</html>
