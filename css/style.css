@@ -604,3 +604,147 @@ label {
   .opcoes-grid { grid-template-columns: 1fr; }
   .stats-grid { grid-template-columns: repeat(2, 1fr); }
 }
+
+
+/* ─────────────────────────────
+   RESPONSIVIDADE MOBILE/TABLET
+   Adicione no FINAL do CSS
+
+
+   /* ─── RESPONSIVIDADE MOBILE ─── */
+
+@media (max-width: 768px) {
+
+  .container {
+    padding: 1rem;
+  }
+
+  /* ── NAV ── */
+  nav {
+    padding: 0 1rem;
+    height: auto;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    padding-top: 0.6rem;
+    padding-bottom: 0.6rem;
+  }
+
+  .nav-links {
+    order: 3;
+    width: 100%;
+    gap: 0.5rem;
+    overflow-x: auto;
+    padding-bottom: 4px;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .nav-links a {
+    font-size: 0.7rem;
+    white-space: nowrap;
+    padding: 3px 6px;
+  }
+
+  .nav-user {
+    gap: 0.5rem;
+    font-size: 0.8rem;
+  }
+
+  .btn-logout {
+    padding: 3px 8px;
+    font-size: 0.7rem;
+  }
+
+  /* ── HOME ── */
+  .home-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* ── QUIZ ── */
+  .opcoes-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .quiz-header {
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+
+  #pergunta-texto {
+    font-size: 1rem;
+  }
+
+  /* ── TIMER ── */
+  #timer-display {
+    font-size: 2.2rem;
+    letter-spacing: 2px;
+  }
+
+  /* ── RESULTADO ── */
+  .resultado-score {
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* ── PERFIL ── */
+  .perfil-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  /* ── RANKING ── */
+  .ranking-item {
+    gap: 0.5rem;
+    padding: 0.75rem;
+  }
+
+  .ranking-lvl {
+    display: none;
+  }
+
+  /* ── BADGES ── */
+  .badges-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* ── LOGIN ── */
+  .login-box {
+    padding: 1.5rem 1rem;
+  }
+
+}
+
+/* Telas muito pequenas (< 400px) */
+@media (max-width: 400px) {
+
+  .page-title {
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+  }
+
+  #timer-display {
+    font-size: 1.8rem;
+  }
+
+  .resultado-score {
+    font-size: 2rem;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .opcao-btn {
+    padding: 0.75rem;
+    font-size: 0.85rem;
+  }
+
+  .panel {
+    padding: 1rem;
+  }
+
+}
